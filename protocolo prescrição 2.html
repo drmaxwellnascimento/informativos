@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOCOLO DISPENSAÇÃO, VALIDADE E CONTROLE DE MEDICAÇÕES DA APS - NSRA DO SOCORRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Base styles */
+        :root {
+            --color-primary: #1d4ed8;
+            --color-background: #f3f4f6;
+            --color-nsra: #104e8d;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            border-left: 5px solid var(--color-nsra);
+            padding-left: 1rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        /* --- FAQ Styles Updated --- */
+        .faq-topic-group {
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .faq-topic-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #374151;
+            padding: 1.25rem 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+        .faq-topic-title:hover {
+            background-color: #f9fafb;
+        }
+        .faq-questions-container {
+            display: none;
+            padding-left: 1rem;
+            border-left: 3px solid var(--color-nsra);
+            margin-left: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .faq-topic-group.active .faq-questions-container {
+            display: block;
+        }
+        .faq-item {
+            border-top: 1px solid #e5e7eb;
+            padding: 1rem 0;
+        }
+        .faq-question {
+            font-weight: 600;
+            color: var(--color-nsra);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            display: none;
+            padding-top: 0.75rem;
+            color: #4b5563;
+            padding-left: 10px;
+            margin-top: 5px;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .arrow {
+            transition: transform 0.3s;
+            font-size: 1.2em;
+        }
+        .faq-topic-group.active .arrow,
+        .faq-item.active .arrow {
+            transform: rotate(180deg);
+        }
+        
+        /* Table Styles */
+        .table-header {
+            background-color: #007BFF; 
+            color: white;
+        }
+        .table-custom-cell {
+            padding: 0.75rem 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+            white-space: normal;
+            word-break: break-word;
+        }
+        .table-hover-row:hover {
+            background-color: #f9fafb;
+        }
+        .attention-point {
+            font-weight: bold;
+            color: #DC3545;
+        }
+        
+        /* Footer Styles */
+        .footer-nsra {
+            background-color: #eef2ff;
+            color: var(--color-nsra);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header class="text-center pb-6 mb-8 border-b border-gray-200">
+            <img src="logo.png" alt="Logo da Prefeitura" class="h-20 mx-auto mb-4">
+            <h1 class="text-3xl font-extrabold text-gray-800">PROTOCOLO DE DISPENSAÇÃO, VALIDADE E CONTROLE DE MEDICAÇÕES NA APS</h1>
+            <p class="text-lg font-light text-gray-600">Município de Nossa Senhora do Socorro (NSRA DO SOCORRO)</p>
+            <p class="text-sm text-gray-500">Documento: NO. APS. 001 | Emissão: 22/10/2025</p>
+        </header>
+
+        <div class="mb-10">
+            <h2 class="text-2xl section-title mb-6">4. TABELA DE DIRETRIZES PARA DISPENSAÇÃO (GUIA RÁPIDO)</h2>
+            <p class="text-gray-700 text-sm mb-4">Esta tabela resume as diretrizes de dispensação por classe, baseada nas regras específicas do Protocolo.</p>
+            <div class="overflow-x-auto rounded-lg shadow-xl border border-gray-200">
+                <table class="w-full text-left border-collapse">
+                    <thead class="table-header">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-xs font-bold uppercase tracking-wider">TIPO DE MEDICAÇÃO / CONDIÇÃO</th>
+                            <th scope="col" class="px-6 py-3 text-xs font-bold uppercase tracking-wider w-1/5">VALIDADE MÁXIMA DA RECEITA</th>
+                            <th scope="col" class="px-6 py-3 text-xs font-bold uppercase tracking-wider w-1/4">QUANTIDADE / REGRA DE DISPENSAÇÃO</th>
+                            <th scope="col" class="px-6 py-3 text-xs font-bold uppercase tracking-wider w-1/4">PONTOS DE ATENÇÃO (OBSERVAÇÕES)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white text-sm divide-y divide-gray-200">
+                         <!-- Conteúdo da tabela permanece o mesmo -->
+                        <tr class="table-hover-row">
+                            <td class="table-custom-cell font-medium">Doenças Crônicas (Hipertensão, Diabetes, Dislipidemia)</td>
+                            <td class="table-custom-cell">180 dias (6 meses)</td>
+                            <td class="table-custom-cell">Dispensação mensal (para 30 dias de tratamento por vez)</td>
+                            <td class="table-custom-cell">-</td>
+                        </tr>
+                        <tr class="table-hover-row">
+                            <td class="table-custom-cell font-medium">Anticoncepcionais</td>
+                            <td class="table-custom-cell">365 dias (1 ano)</td>
+                            <td class="table-custom-cell">Mensal ou trimestral segundo a posologia da medicação de escolha</td>
+                            <td class="table-custom-cell">-</td>
+                        </tr>
+                        <tr class="table-hover-row">
+                            <td class="table-custom-cell font-medium">Analgésicos e Antitérmicos (Uso Agudo)</td>
+                            <td class="table-custom-cell">Válida para uma única aquisição até 10 dias após a prescrição</td>
+                            <td class="table-custom-cell">Máx. 20 comprimidos ou 01 frasco (gotas)</td>
+                            <td class="table-custom-cell attention-point">A renovação exige nova avaliação. Receita não pode ser reutilizada.</td>
+                        </tr>
+                        <tr class="table-hover-row">
+                            <td class="table-custom-cell font-medium">Anti-inflamatórios</td>
+                            <td class="table-custom-cell">Até 15 dias da data de emissão médica</td>
+                            <td class="table-custom-cell">Ibuprofeno: Máx. 20 comprimidos (5 dias). Nimesulida: Máx. 12 comprimidos (6 dias) ou 01 frasco (gotas).</td>
+                            <td class="table-custom-cell attention-point">A renovação requer nova avaliação médica. Receita não pode ser reutilizada.</td>
+                        </tr>
+                        <tr class="table-hover-row">
+                            <td class="table-custom-cell font-medium">Inibidores de Bomba de Prótons (Omeprazol 20mg)</td>
+                            <td class="table-custom-cell">60 dias</td>
+                            <td class="table-custom-cell">Mensal conforme prescrição</td>
+                            <td class="table-custom-cell attention-point">Após a validade de 60 dias, não será mais possível liberar.</td>
+                        </tr>
+                        <tr class="table-hover-row">
+                            <td class="table-custom-cell font-medium">Medicamentos em Gotas (Regra Geral)</td>
+                            <td class="table-custom-cell">Conforme a classe.</td>
+                            <td class="table-custom-cell">Apenas 01 (um) frasco por receita.</td>
+                            <td class="table-custom-cell attention-point">Exceções devem ser justificadas (ver item 5).</td>
+                        </tr>
+                        <tr class="table-hover-row">
+                            <td class="table-custom-cell font-medium">Antimicrobianos (Antibióticos)</td>
+                            <td class="table-custom-cell attention-point">10 dias (RDC nº 471/2021)</td>
+                            <td class="table-custom-cell">Quantidade para o tratamento completo. Uso Contínuo: 90 dias com dispensação mensal justificada.</td>
+                            <td class="table-custom-cell attention-point">Receita em 2 vias. Obrigatório reter a 2ª via da receita.</td>
+                        </tr>
+                        <tr class="table-hover-row">
+                            <td class="table-custom-cell font-medium">Medicamentos de Controle Especial (Portaria 344/98)</td>
+                            <td class="table-custom-cell">30 dias (para A1, B1 e C1)</td>
+                            <td class="table-custom-cell">Conforme legislação. Receituário Branco: Máximo para 30 dias.</td>
+                            <td class="table-custom-cell attention-point">Seguir rigorosamente a Portaria 344/98. Nova receita é exigida para renovação.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SEÇÃO FAQ COM SUBTEMAS EXPANSÍVEIS -->
+        <div class="mb-10">
+            <h2 class="text-2xl section-title mb-6">5. PERGUNTAS FREQUENTES (FAQ)</h2>
+            <div id="faq-list">
+
+                <div class="faq-topic-group">
+                    <h3 class="faq-topic-title" onclick="toggleTopic(this)">Regras Gerais de Prescrição <span class="arrow">&#9660;</span></h3>
+                    <div class="faq-questions-container">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">O que deve constar obrigatoriamente em toda prescrição? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">Toda prescrição deve ser legível, sem rasuras, e conter: nome completo do paciente, nome do medicamento (DCB), concentração, forma farmacêutica, posologia, quantidade, data de emissão, nome, assinatura e número de inscrição do prescritor.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a regra para renovação de receitas de condições não crônicas? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A renovação de prescrições para condições não crônicas está condicionada a uma nova avaliação médica.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Pode-se usar nome comercial na prescrição para dispensação na rede municipal? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">Não serão aceitas prescrições com nome comercial e/ou marcas de medicamentos. Deve-se adotar a Denominação Comum Brasileira (DCB).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-topic-group">
+                    <h3 class="faq-topic-title" onclick="toggleTopic(this)">Prescrições Especiais e Exceções <span class="arrow">&#9660;</span></h3>
+                    <div class="faq-questions-container">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">O que é exigido para prescrições fora do padrão (situações excepcionais)? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">Prescrições fora do padrão exigem registro claro da fundamentação no prontuário do paciente e em relatório médico simplificado com CID. A prescrição deve conter a anotação "Prescrição de exceção - vide prontuário".</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">O que é exigido para medicamentos de Dor Crônica (uso de resgate)? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A prescrição deve conter a observação "Uso para dor crônica" e anexado à relatório detalhado com CID. A validade da receita é de 30 dias com quantitativo justificado.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">O que o prescritor deve fazer se precisar prescrever uma quantidade que não está no padrão? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">Deve seguir a regra de Prescrição em Caráter de Exceção, incluindo registro da fundamentação no prontuário e anotação "Prescrição de exceção - vide prontuário" na receita.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a validade da exceção de prescrição? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A validade da exceção é restrita à emissão específica, não se aplicando a renovações futuras.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-topic-group">
+                    <h3 class="faq-topic-title" onclick="toggleTopic(this)">Regras por Tipo de Medicamento <span class="arrow">&#9660;</span></h3>
+                    <div class="faq-questions-container">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a validade e dispensação para medicamentos de uso crônico (Hipertensão, Diabetes)? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A receita é válida por 180 dias (6 meses), com dispensação mensal para 30 dias de tratamento por vez.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a validade da receita para Anticoncepcionais? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A receita é válida por até 365 dias (1 ano).</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a regra para Analgésicos/Antitérmicos em uso agudo? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A receita é válida para uma única aquisição até 10 dias após a prescrição. O quantitativo máximo é de 20 comprimidos ou 01 frasco (gotas). Após esse período, a renovação exige nova avaliação médica.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a regra para Anti-inflamatórios? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A renovação da receita para anti-inflamatórios requer nova avaliação médica. O máximo de Ibuprofeno é 20 comprimidos (5 dias) e Nimesulida 12 comprimidos (6 dias).</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a validade da receita de Omeprazol (Inibidores de Bomba de Prótons)? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A receita é válida por 60 dias. Após essa validade, a medicação não será mais liberada.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a validade da receita para Vitaminas e Antianêmicos? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A receita é válida por 90 dias, com dispensação mensal para 30 dias de tratamento.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">A receita de Anti-helmínticos/Antiparasitários pode ser reutilizada? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">Não, a receita não pode ser reutilizada. O tratamento de parceiros(as) exige consulta e prescrição individual.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-topic-group">
+                    <h3 class="faq-topic-title" onclick="toggleTopic(this)">Controle Especial e Antimicrobianos <span class="arrow">&#9660;</span></h3>
+                    <div class="faq-questions-container">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a validade da receita para Antimicrobianos (Antibióticos)? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">As receitas de antimicrobianos têm validade de 10 dias. Para uso contínuo, a receita tem validade de 90 dias com dispensação mensal, justificado via CID.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a regra para Medicamentos de Controle Especial (Receituário Branco)? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">Dispensação para 30 dias de tratamento, sem revalidação da receita. Deve-se seguir rigorosamente a Portaria SVS/MS nº 344/98.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a exigência para o Receituário B (Notificação de Receita Azul)? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">É vedada a emissão da Notificação de Receita Azul sem a presença e avaliação direta do paciente.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a idade mínima para dispensação de medicamentos de controle especial? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">Para a dispensação de medicamentos sujeitos a controle especial pela Portaria SVS/MS nº 344/98, a idade mínima de 18 anos será exigida, conforme a legislação federal.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-topic-group">
+                    <h3 class="faq-topic-title" onclick="toggleTopic(this)">Práticas da Farmácia e Unidade <span class="arrow">&#9660;</span></h3>
+                    <div class="faq-questions-container">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">É permitido transcrever ou fracionar receitas na UBS? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">Não, é VEDADA a transcrição de receitas sem a presença do usuário e prontuário, assim como o fracionamento de medicamentos nos dispensários.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a regra de dispensação para medicamentos injetáveis? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">Os medicamentos injetáveis deverão ser dispensados para administração exclusiva nos equipamentos de saúde da SEMS. Casos excepcionais deverão ser avaliados pela equipe.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual a responsabilidade da unidade de saúde em relação ao protocolo? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">A unidade de saúde, na figura de seu coordenador e/ou farmacêutico, é responsável pelo cumprimento das normalizações dispostas neste protocolo.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Qual é o objetivo principal deste Protocolo? <span class="arrow">&#9660;</span></div>
+                            <div class="faq-answer">O protocolo visa qualificar a assistência farmacêutica e a prática clínica, padronizando a validade e os quantitativos de medicamentos para promover o uso racional, garantir a segurança do paciente e otimizar a gestão de recursos.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer-nsra">
+            Secretaria Municipal de Nossa Senhora do Socorro - Um novo tempo, um novo olhar
+        </footer>
+
+    </div>
+
+    <script>
+        /**
+         * Alterna a visibilidade da lista de perguntas de um tópico.
+         * @param {HTMLElement} element - O elemento clicado (faq-topic-title).
+         */
+        function toggleTopic(element) {
+            const topicGroup = element.parentNode;
+            topicGroup.classList.toggle('active');
+
+            // Fecha outros tópicos abertos para manter a interface limpa
+            document.querySelectorAll('.faq-topic-group.active').forEach(openTopic => {
+                if (openTopic !== topicGroup) {
+                    openTopic.classList.remove('active');
+                }
+            });
+        }
+
+        /**
+         * Alterna a visibilidade da resposta de uma pergunta.
+         * @param {HTMLElement} element - O elemento clicado (faq-question).
+         */
+        function toggleFaq(element) {
+            const item = element.parentNode;
+            const wasActive = item.classList.contains('active');
+
+            // Fecha todas as perguntas dentro do mesmo tópico
+            const questionContainer = item.parentNode;
+            questionContainer.querySelectorAll('.faq-item.active').forEach(openItem => {
+                openItem.classList.remove('active');
+            });
+
+            // Abre o item clicado apenas se ele não estava ativo antes
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
